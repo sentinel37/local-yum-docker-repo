@@ -54,13 +54,13 @@ echo '  *  *  *  *  * root reposync -g -l -d -m --repoid=base --newest-only --do
 echo '  *  *  *  *  * root reposync -g -l -d -m --repoid=centosplus --newest-only --download-metadata --download_path=/var/www/html/repos/'>>/etc/crontab
 echo '  *  *  *  *  * root reposync -g -l -d -m --repoid=extras --newest-only --download-metadata --download_path=/var/www/html/repos/'>>/etc/crontab
 echo '  *  *  *  *  * root reposync -g -l -d -m --repoid=updates --newest-only --download-metadata --download_path=/var/www/html/repos/'>>/etc/crontab
-echo '-------------------------------------'
-echo '-------------------------------------'
-echo 'Removing Legacy Repos'
-echo '-------------------------------------'
-echo '-------------------------------------'
-createrepo /var/www/html
-# mv /etc/yum.repos.d/*.repo /tmp/
+# echo '-------------------------------------'
+# echo '-------------------------------------'
+# echo 'Removing Legacy Repos'
+# echo '-------------------------------------'
+# echo '-------------------------------------'
+# createrepo /var/www/html
+# # mv /etc/yum.repos.d/*.repo /tmp/
 echo '-------------------------------------'
 echo '-------------------------------------'
 echo 'Creating Local Repo'
