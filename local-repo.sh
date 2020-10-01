@@ -13,6 +13,7 @@ echo '-------------------------------------'
 echo '-------------------------------------'
 yum update -y
 sudo yum install httpd -y
+sudo yum install docker -y
 systemctl start httpd
 systemctl enable httpd
 sudo yum install createrepo -y
