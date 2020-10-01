@@ -8,16 +8,21 @@
 
 echo '-------------------------------------'
 echo '-------------------------------------'
-echo 'Updating Server and installing apache'
+echo 'Updating Server '
 echo '-------------------------------------'
 echo '-------------------------------------'
 yum update -y
+echo '-------------------------------------'
+echo '-------------------------------------'
+echo 'Installing Required Packages'
+echo '-------------------------------------'
+echo '-------------------------------------'
 sudo yum install httpd -y
 sudo yum install docker -y
-systemctl start httpd
-systemctl enable httpd
 sudo yum install createrepo -y
 sudo yum install yum-utils
+systemctl start httpd
+systemctl enable httpd
 echo '-------------------------------------'
 echo '-------------------------------------'
 echo 'Creating Repo Directories'
