@@ -88,28 +88,29 @@ echo '-------------------------------------'
 echo 'Configuring Docker Compose File'
 echo '-------------------------------------'
 echo '-------------------------------------'
-mkdir /etc/Docker
-mkdir /etc/Docker/volume
-echo "---">>/etc/Docker/docker-compose.yml
-echo "version: '3'">>/etc/Docker/docker-compose.yml
-echo "">>/etc/Docker/docker-compose.yml
-echo "services:">>/etc/Docker/docker-compose.yml
-echo "    docker-registry:">>/etc/Docker/docker-compose.yml
-echo "        container_name: local-docker-registry">>/etc/Docker/docker-compose.yml
-echo "        image: registry:2">>/etc/Docker/docker-compose.yml
-echo "        ports:">>/etc/Docker/docker-compose.yml
-echo "            - 5000:5000">>/etc/Docker/docker-compose.yml
-echo "        restart: always">>/etc/Docker/docker-compose.yml
-echo "        volumes:">>/etc/Docker/docker-compose.yml
-echo "            - ./volume:/var/lib/registry">>/etc/Docker/docker-compose.yml
-echo "    docker-registry-ui:">>/etc/Docker/docker-compose.yml
-echo "        container_name: docker-registry-ui">>/etc/Docker/docker-compose.yml
-echo "        image: konradkleine/docker-registry-frontend:v2">>/etc/Docker/docker-compose.yml
-echo "        ports:">>/etc/Docker/docker-compose.yml
-echo "            - 8080:80">>/etc/Docker/docker-compose.yml
-echo "        environment:">>/etc/Docker/docker-compose.yml
-echo "            ENV_DOCKER_REGISTRY_HOST: docker-registry">>/etc/Docker/docker-compose.yml
-echo "            ENV_DOCKER_REGISTRY_PORT: 5000">>/etc/Docker/docker-compose.yml
+mkdir /etc/docker
+mkdir /etc/docker/volume
+mkdir -p /var/lib/registry
+echo "---">>/etc/docker/docker-compose.yml
+echo "version: '3'">>/etc/docker/docker-compose.yml
+echo "">>/etc/docker/docker-compose.yml
+echo "services:">>/etc/docker/docker-compose.yml
+echo "    docker-registry:">>/etc/docker/docker-compose.yml
+echo "        container_name: local-docker-registry">>/etc/docker/docker-compose.yml
+echo "        image: registry:2">>/etc/docker/docker-compose.yml
+echo "        ports:">>/etc/docker/docker-compose.yml
+echo "            - 5000:5000">>/etc/docker/docker-compose.yml
+echo "        restart: always">>/etc/docker/docker-compose.yml
+echo "        volumes:">>/etc/docker/docker-compose.yml
+echo "            - ./volume:/var/lib/registry">>/etc/docker/docker-compose.yml
+echo "    docker-registry-ui:">>/etc/docker/docker-compose.yml
+echo "        container_name: docker-registry-ui">>/etc/docker/docker-compose.yml
+echo "        image: konradkleine/docker-registry-frontend:v2">>/etc/docker/docker-compose.yml
+echo "        ports:">>/etc/docker/docker-compose.yml
+echo "            - 8080:80">>/etc/docker/docker-compose.yml
+echo "        environment:">>/etc/docker/docker-compose.yml
+echo "            ENV_DOCKER_REGISTRY_HOST: docker-registry">>/etc/docker/docker-compose.yml
+echo "            ENV_DOCKER_REGISTRY_PORT: 5000">>/etc/docker/docker-compose.yml
 systemctl enable docker
 systemctl start docker
 echo '-------------------------------------'
