@@ -159,6 +159,9 @@ echo '{'
 echo "     "insecure-registries":["$var:5000"]"
 echo '}'
 echo 'Then stop and start docker service'
+# docker pull centos
+# docker tag centos:latest sean.local.com:5000/gisau/centos:v1
+# docker push sean.local.com:5000/gisau/centos:v1
 echo '-------------------------------------'
 echo '-------------------------------------'
 echo '-------------------------------------'
