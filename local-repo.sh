@@ -125,7 +125,7 @@ echo '-------------------------------------'
 echo 'Starting Locl Docker Registry'
 echo '-------------------------------------'
 echo '-------------------------------------'
-/usr/local/bin/docker-compose -f /etc/Docker/docker-compose.yml up -d
+/usr/local/bin/docker-compose -f /etc/docker/docker-compose.yml up -d
 echo '-------------------------------------'
 echo '-------------------------------------'
 echo 'Local Repo and Docker Configuration Completed!!!!!!!!'
