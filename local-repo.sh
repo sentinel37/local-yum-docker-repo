@@ -5,7 +5,6 @@
 
 # Creating Docker Registry:
 #          https://www.youtube.com/watch?v=8gEs_zefNYA
-
 echo '-------------------------------------'
 echo '-------------------------------------'
 echo 'Updating Server'
@@ -85,12 +84,18 @@ sudo firewall-cmd --reload
 firewall-cmd --zone=public --list-ports
 echo '-------------------------------------'
 echo '-------------------------------------'
+echo 'create docker user'
+echo '-------------------------------------'
+echo '-------------------------------------'
+sudo adduser docker
+echo '-------------------------------------'
+echo '-------------------------------------'
 echo 'Configuring Docker Compose File'
 echo '-------------------------------------'
 echo '-------------------------------------'
 mkdir /etc/docker
 mkdir /etc/docker/volume
-mkdir -p /var/lib/registry
+# mkdir -p /var/lib/registry
 echo "---">>/etc/docker/docker-compose.yml
 echo "version: '3'">>/etc/docker/docker-compose.yml
 echo "">>/etc/docker/docker-compose.yml
@@ -102,7 +107,7 @@ echo "        ports:">>/etc/docker/docker-compose.yml
 echo "            - 5000:5000">>/etc/docker/docker-compose.yml
 echo "        restart: always">>/etc/docker/docker-compose.yml
 echo "        volumes:">>/etc/docker/docker-compose.yml
-echo "            - ./volume:/var/lib/registry">>/etc/docker/docker-compose.yml
+echo "            - ./volume:/home/docker/var/lib/registry">>/etc/docker/docker-compose.yml
 echo "    docker-registry-ui:">>/etc/docker/docker-compose.yml
 echo "        container_name: docker-registry-ui">>/etc/docker/docker-compose.yml
 echo "        image: konradkleine/docker-registry-frontend:v2">>/etc/docker/docker-compose.yml
